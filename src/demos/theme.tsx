@@ -9,7 +9,7 @@ import styles from './theme.less';
 
 const Theme = () => {
   return (
-    <div>
+    <div className={styles.color}>
       {THEME_COLORS.map((item) => (
         <div key={item}>
           <h2>{item}</h2>
