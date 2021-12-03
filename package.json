@@ -43,6 +43,7 @@
     "**/*.{js,jsx,ts,tsx}": "eslint"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "rc-hooks": "^1.8.2"
   },
   "deepDependencies": {

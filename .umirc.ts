@@ -63,6 +63,9 @@ export default defineConfig({
   favicon,
   outputPath: 'docs-dist',
   mode: 'site',
+  history: {
+    type: 'hash',
+  },
   hash: true,
   navs: [
     {
