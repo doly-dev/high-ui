@@ -12,6 +12,7 @@ on:
       - src/**
       - .fatherrc.ts
       - .umirc.js
+      - .github/**
 
 jobs:
   build-and-deploy:
