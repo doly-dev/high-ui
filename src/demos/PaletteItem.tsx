@@ -61,7 +61,7 @@ const PaletteItem: React.FC<PaletteItemProps> = ({
       });
       setContrast(numberToFixed(contrastValue));
     }
-  }, [mode, divRef.current, color]);
+  }, [mode, color]);
 
   const colorStr = colorObj?.[type] || '';
 

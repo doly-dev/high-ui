@@ -48,7 +48,7 @@ const BoxWithColor = React.forwardRef<HTMLElement, BoxWithColorProps>(
       () => ({
         [calcStyleProp]: color,
       }),
-      [color],
+      [calcStyleProp, color],
     );
 
     React.useEffect(() => {
