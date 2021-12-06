@@ -23,12 +23,12 @@ jobs:
         with:
           persist-credentials: false
       - name: Install
-        run: npm install
+        run: yarn install
       - name: Build package
-        run: npm run build
+        run: yarn build
       - name: Build latest docs
         if: ${{github.ref == 'refs/heads/main'}}
-        run: npm run docs:build
+        run: yarn docs:build
       - name: Deploy latest docs
         if: ${{github.ref == 'refs/heads/main'}}
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -39,7 +39,7 @@ jobs:
           TARGET_FOLDER: latest
       - name: Build version docs
         if: ${{github.ref != 'refs/heads/main'}}
-        run: npm run docs-version:build
+        run: yarn docs-version:build
       - name: Deploy version docs
         if: ${{github.ref != 'refs/heads/main'}}
         uses: JamesIves/github-pages-deploy-action@releases/v3
