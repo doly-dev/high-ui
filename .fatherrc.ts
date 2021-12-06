@@ -1,4 +1,27 @@
-export default {
-  esm: 'rollup',
-  cjs: 'rollup',
-};
+export default [
+  {
+    esm: {
+      type: 'babel',
+      importLibToEs: true,
+    },
+    cjs: {
+      type: 'babel',
+      lazy: true,
+    },
+    runtimeHelpers: true,
+  },
+  // {
+  //   extraExternals: ["react", "react-dom"],
+  //   // extractCSS: true,
+  //   umd: {
+  //     globals: {
+  //       react: "React",
+  //       "react-dom": "ReactDom"
+  //     },
+  //     minFile: true,
+  //     file: "high",
+  //     name: "high",
+  //     // sourcemap: true
+  //   }
+  // }
+];

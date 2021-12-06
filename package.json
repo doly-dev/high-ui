@@ -43,9 +43,12 @@
     "**/*.{js,jsx,ts,tsx}": "eslint"
   },
   "dependencies": {
+    "@babel/runtime": "^7.16.3",
     "classnames": "^2.3.1",
-    "rc-hooks": "^1.8.2",
-    "react": "^16.12.0 || ^17.0.0"
+    "rc-hooks": "^1.8.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
@@ -68,6 +71,7 @@
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
+    "react": "^16.12.0",
     "react-copy-to-clipboard": "^5.0.4",
     "stylelint": "^14.1.0",
     "stylelint-config-css-modules": "^2.3.0",
@@ -77,5 +81,9 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
     "stylelint-no-unsupported-browser-features": "^5.0.2",
     "yorkie": "^2.0.0"
+  },
+  "resolutions": {
+    "react": "^16.12.0",
+    "@types/react": "^16.12.0"
   }
 }
