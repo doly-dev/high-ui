@@ -1,4 +1,5 @@
 import Color from 'color';
+import { ContrastMode } from './constants';
 
 export const COLOR_WHITE = 'white';
 export const COLOR_BLACK = 'black';
@@ -20,7 +21,6 @@ export const formatHSL = (hsl: number[]) => {
   return `hsl(${numberToFixed(h)}, ${numberToFixed(s)}%, ${numberToFixed(l)}%)`;
 };
 
-export type ContrastMode = 'material' | 'standard';
 type GetContrastAndColorOptions = {
   contrast?: number;
   mode?: ContrastMode;
@@ -30,12 +30,13 @@ export const getContrastAndColor = (
   color = 'white',
   options: GetContrastAndColorOptions = {},
 ) => {
-  const { contrast = CONTRAST_THRESHOLD, mode = 'material' } = options;
+  const { contrast = CONTRAST_THRESHOLD, mode = ContrastMode.Material } =
+    options;
   const colorObj = Color(color);
   const WhiteContrast = colorObj.contrast(Color(COLOR_WHITE));
   const BlackContrast = colorObj.contrast(Color(COLOR_BLACK));
 
-  if (mode === 'material') {
+  if (mode === ContrastMode.Material) {
     // Material Design 方案，优先白色
     if (WhiteContrast >= contrast || WhiteContrast >= BlackContrast) {
       return {

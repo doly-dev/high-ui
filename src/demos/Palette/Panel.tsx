@@ -2,19 +2,13 @@ import * as React from 'react';
 import { message, Typography } from 'antd';
 import Color from 'color';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { getWcagRule } from '../wcag';
+import { numberToFixed, formatHSL, getContrastAndColor } from '../utils';
+import { ColorType, ContrastMode } from '../constants';
 import BoxWithColor from './BoxWithColor';
-import { numberToFixed, formatHSL } from './utils';
-import { getWcagRule } from './wcag';
-import { getContrastAndColor, ContrastMode } from './utils';
-import styles from './palette.less';
+import styles from './index.less';
 
-export enum ColorType {
-  HEX = 'hex',
-  RGB = 'rgb',
-  HSL = 'hsl',
-}
-
-interface PaletteItemProps {
+interface PaletteCardProps {
   color: string;
   name: string;
   type: ColorType;
@@ -22,16 +16,18 @@ interface PaletteItemProps {
   showColor?: boolean;
   showName?: boolean;
   showContrast?: boolean;
+  copyField?: 'color' | 'name';
 }
 
-const PaletteItem: React.FC<PaletteItemProps> = ({
+const PaletteCard: React.FC<PaletteCardProps> = ({
   color,
   name,
   type,
-  mode = 'material',
+  mode = ContrastMode.Material,
   showColor = true,
   showContrast = true,
   showName = true,
+  copyField = 'color',
 }) => {
   const divRef = React.useRef<HTMLDivElement>(null);
   const [contrast, setContrast] = React.useState<number>();
@@ -64,20 +60,21 @@ const PaletteItem: React.FC<PaletteItemProps> = ({
   }, [mode, color]);
 
   const colorStr = colorObj?.[type] || '';
+  const copyText = copyField === 'color' ? colorStr : name;
 
   return (
     <CopyToClipboard
-      text={colorStr}
+      text={copyText}
       onCopy={() => {
         message.success(
           <>
-            复制成功！<Typography.Text code>{colorStr}</Typography.Text>
+            复制成功！<Typography.Text code>{copyText}</Typography.Text>
           </>,
         );
       }}
     >
       <BoxWithColor
-        className={styles.paletteItem}
+        className={styles.palettePanel}
         style={{ backgroundColor: color }}
         mode={mode}
         ref={divRef}
@@ -102,4 +99,4 @@ const PaletteItem: React.FC<PaletteItemProps> = ({
   );
 };
 
-export default PaletteItem;
+export default PaletteCard;

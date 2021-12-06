@@ -3,10 +3,10 @@
  */
 import * as React from 'react';
 import { Radio, Checkbox } from 'antd';
-import PaletteItem, { ColorType } from './PaletteItem';
-import { PALETTE_COLORS, PALETTE_SHADE } from './constants';
-import { ContrastMode } from './utils';
-import styles from './palette.less';
+import Palette from './Palette';
+import { PALETTE_COLORS, PALETTE_SHADE, CSS_VAR_PREFIX } from './constants';
+import { ContrastMode, ColorType } from './constants';
+import styles from './colors.less';
 
 const ColorTypeOptions = [
   {
@@ -40,23 +40,47 @@ const VisibleOptions = [
 
 const DefaultVisible = VisibleOptions.map((item) => item.value);
 
+type CopyFieldType = 'name' | 'color';
+const CopyFieldOptions = [
+  {
+    value: 'name',
+    label: 'CSS 变量名',
+  },
+  {
+    value: 'color',
+    label: '颜色',
+  },
+];
+
 const ContrastModeOptions = [
   {
-    value: 'material',
+    value: ContrastMode.Material,
     label: 'Material Design',
   },
   {
-    value: 'standard',
+    value: ContrastMode.Standard,
     label: 'Standard',
   },
 ];
 
-const Palette = () => {
-  const [visible, setVisible] = React.useState(DefaultVisible);
+const COLORS = PALETTE_COLORS.map((colorItem) =>
+  PALETTE_SHADE.map((shadeItem) => {
+    const colorVarName = `${CSS_VAR_PREFIX}-${colorItem}-${shadeItem}`;
+    return {
+      name: `--${colorVarName}`,
+      color: `rgb(var(--${colorVarName}))`,
+    };
+  }),
+);
+
+const Colors = () => {
+  const [visible, setVisible] =
+    React.useState<(string | number | boolean)[]>(DefaultVisible);
   const [contrastMode, setContrastMode] = React.useState(
     ContrastModeOptions[0].value,
   );
   const [colorType, setColorType] = React.useState(ColorTypeOptions[0].value);
+  const [copyField, setCopyField] = React.useState<CopyFieldType>('color');
 
   return (
     <div>
@@ -65,7 +89,6 @@ const Palette = () => {
         <Checkbox.Group
           options={VisibleOptions}
           value={visible}
-          // @ts-ignore
           onChange={setVisible}
         />
       </div>
@@ -78,6 +101,14 @@ const Palette = () => {
         />
       </div>
       <div className={styles.formItem}>
+        点击复制：
+        <Radio.Group
+          options={CopyFieldOptions}
+          value={copyField}
+          onChange={(e) => setCopyField(e.target.value)}
+        />
+      </div>
+      <div className={styles.formItem}>
         颜色类型：
         <Radio.Group
           options={ColorTypeOptions}
@@ -87,26 +118,23 @@ const Palette = () => {
           buttonStyle="solid"
         />
       </div>
-      <div className={styles.paletteList}>
-        {PALETTE_COLORS.map((colorItem) => (
-          <div className={styles.paletteSubList} key={colorItem}>
-            {PALETTE_SHADE.map((item) => (
-              <PaletteItem
-                key={`${colorItem}${item}`}
-                color={`rgb(var(--${colorItem}-${item}))`}
-                name={`${colorItem}-${item}`}
-                type={colorType}
-                mode={contrastMode as ContrastMode}
-                showColor={visible.includes('color')}
-                showName={visible.includes('name')}
-                showContrast={visible.includes('contrast')}
-              />
-            ))}
-          </div>
+      <div className={styles.list}>
+        {COLORS.map((colorItems, index) => (
+          <Palette
+            key={index}
+            data={colorItems}
+            contrastMode={contrastMode}
+            colorType={colorType}
+            showColor={visible.includes('color')}
+            showName={visible.includes('name')}
+            showContrast={visible.includes('contrast')}
+            copyField={copyField}
+            className={styles.item}
+          />
         ))}
       </div>
     </div>
   );
 };
 
-export default Palette;
+export default Colors;

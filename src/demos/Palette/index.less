@@ -1,0 +1,23 @@
+@import '../../style/palette.less';
+
+.palettePanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 38px;
+  padding: 8px;
+  overflow: hidden;
+  font-size: 13px;
+  font-family: 'Helvetica Neue';
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+
+  &:hover {
+    box-shadow: 0 3px 8px 3px rgba(var(--high-black), 0.3);
+    transform: scale(1.015);
+  }
+
+  .color {
+    text-align: right;
+  }
+}

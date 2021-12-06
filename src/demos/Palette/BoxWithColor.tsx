@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { getContrastAndColor, ContrastMode } from './utils';
+import { ContrastMode } from '../constants';
+import { getContrastAndColor } from '../utils';
 
 // fore-计算文本颜色 back-计算背景颜色
 type PositionType = 'fore' | 'back';
@@ -13,7 +14,15 @@ interface BoxWithColorProps<E extends HTMLElement = HTMLDivElement>
 }
 
 const BoxWithColor = React.forwardRef<HTMLElement, BoxWithColorProps>(
-  ({ as = 'div', position = 'fore', mode = 'material', ...restProps }, ref) => {
+  (
+    {
+      as = 'div',
+      position = 'fore',
+      mode = ContrastMode.Material,
+      ...restProps
+    },
+    ref,
+  ) => {
     const [color, setColor] = React.useState('');
     const divRef = React.useRef(null);
     const handleRef = React.useCallback(

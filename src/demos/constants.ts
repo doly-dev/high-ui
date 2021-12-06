@@ -1,3 +1,5 @@
+export const CSS_VAR_PREFIX = 'high';
+
 export const PALETTE_COLORS = [
   'red',
   'pink',
@@ -36,6 +38,17 @@ export const PALETTE_SHADE = [
   'A400',
   'A700',
 ];
+
+export enum ColorType {
+  HEX = 'hex',
+  RGB = 'rgb',
+  HSL = 'hsl',
+}
+
+export enum ContrastMode {
+  Material = 'material',
+  Standard = 'standard',
+}
 
 export const THEME_COLORS = [
   'primary',

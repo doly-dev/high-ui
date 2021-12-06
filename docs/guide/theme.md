@@ -1,7 +1,25 @@
 # 主题
 
-<code src='../../src/demos/theme.tsx' />
+## 颜色
 
-## 参考
+<code src='../../src/demos/theme-colors.tsx' />
 
-- [Material Design 的颜色系统](https://material.io/design/color/the-color-system.html)
+## 字体
+
+### 字体序号
+
+### 字体基础大小
+
+## 尺寸
+
+### 断点
+
+### 间距
+
+## 层级
+
+## 边框
+
+## 圆角
+
+## 阴影
