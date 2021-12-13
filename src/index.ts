@@ -1,1 +1,3 @@
-export { default as Typography } from './typography';
+import './style/index.less';
+
+export { default as Typography } from './components/typography';

@@ -28,5 +28,6 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     'react/display-name': 0,
     '@typescript-eslint/ban-ts-comment': 0,
+    'react/prop-types': 0,
   },
 };

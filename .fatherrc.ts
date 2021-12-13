@@ -8,6 +8,8 @@ export default [
       type: 'babel',
       lazy: true,
     },
+    extractCSS: true,
+    lessInBabelMode: true,
     runtimeHelpers: true,
   },
   // {
