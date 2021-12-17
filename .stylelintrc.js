@@ -27,4 +27,5 @@ module.exports = {
     ],
     'color-function-notation': null,
   },
+  ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts'],
 };
