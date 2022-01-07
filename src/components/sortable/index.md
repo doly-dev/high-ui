@@ -27,14 +27,20 @@
 ## API
 
 ```typescript
+export enum SortableTypeEnum {
+  ASC = 'asc',
+  DESC = 'desc'
+}
 type SrotableType = 'asc' | 'desc' | undefined;
 
-interface SortableProps {
+export interface SortableProps {
   text?: React.ReactNode;
   defaultValue?: SortableType;
   value?: SortableType;
   disabled?: boolean;
   onChange?: (sortable: SortableType) => void;
+  className?: string;
+  style?: React.CSSProperties;
 }
 ```
 
@@ -47,10 +53,17 @@ interface SortableProps {
 | value | 值，设置后变为受控模式 | `SortableType` | - |
 | disabled | 禁用 | `boolean` | `false` |
 | onChange | 改变时触发。受控时，可在该回调中改变值。 | `(sortable?: SortableType) => void` | - |
+| className | class | `string` | - |
+| style | 样式 | `CSSProperties` | - |
 
 ### CSS 变量
 
-| 参数                | 说明                 | 默认值                      |
-| ------------------- | -------------------- | --------------------------- |
-| --icon-color        | 三角图标默认颜色     | `rgb(var(--high-grey-400))` |
-| --icon-colo-actived | 三角图标激活时的颜色 | `--high-primary`            |
+| 参数                 | 说明             | 默认值                      |
+| -------------------- | ---------------- | --------------------------- |
+| --icon-font-size     | 图标大小         | `10px`                      |
+| --icon-color         | 默认图标颜色     | `rgb(var(--high-grey-400))` |
+| --icon-color-actived | 激活时的图标颜色 | `--high-primary`            |
+| --color              | 默认文本颜色     | `rgb(var(--high-grey-700))` |
+| --color-actived      | 激活时的文本颜色 | `--high-primary`            |
+| --font-size          | 文本大小         | `14px`                      |
+| --opacity-disabled   | 禁用时透明度     | `0.5`                       |

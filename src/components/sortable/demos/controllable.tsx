@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Sortable, SortableProps } from 'high-ui';
+import { Sortable, SortableProps, SortableTypeEnum } from 'high-ui';
 
 const Demo = () => {
-  const [value, setValue] = React.useState<SortableProps['value']>('asc');
+  const [value, setValue] = React.useState<SortableProps['value']>(SortableTypeEnum.ASC);
 
   return (
     <>

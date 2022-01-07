@@ -1,10 +1,16 @@
 import * as React from 'react';
-import { Sortable, SortableProps } from 'high-ui';
+import { Sortable, SortableTypeEnum } from 'high-ui';
 
 const Demo = () => {
-  const [value, setValue] = React.useState<SortableProps['value']>('desc');
-
-  return <Sortable text="价格" value={value} onChange={setValue} disabled />;
+  return (
+    <>
+      <Sortable disabled />
+      <Sortable value={SortableTypeEnum.ASC} disabled />
+      <br />
+      <Sortable text="价格" disabled />
+      <Sortable text="价格" value={SortableTypeEnum.ASC} disabled />
+    </>
+  );
 };
 
 export default Demo;

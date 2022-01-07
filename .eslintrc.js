@@ -26,9 +26,9 @@ module.exports = {
   rules: {
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
-    'react/display-name': 0,
     'react/prop-types': 0,
     '@typescript-eslint/ban-ts-comment': 0,
-    '@typescript-eslint/no-explicit-any': 0
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-empty-function': 0
   }
 };

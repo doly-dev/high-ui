@@ -3,12 +3,20 @@ import { Sortable } from 'high-ui';
 
 const Demo = () => {
   return (
-    <Sortable
-      text="价格"
-      onChange={(sortable) => {
-        console.log(sortable);
-      }}
-    />
+    <>
+      <Sortable
+        onChange={(sortableType) => {
+          console.log(sortableType);
+        }}
+      />
+      <br />
+      <Sortable
+        text="价格"
+        onChange={(sortableType) => {
+          console.log(sortableType);
+        }}
+      />
+    </>
   );
 };
 
