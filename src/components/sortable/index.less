@@ -1,0 +1,38 @@
+@import '../../style/config.less';
+
+@class-prefix-sortable: ~'@{high-prefix}-sortable';
+
+.@{class-prefix-sortable} {
+  --icon-color: rgb(var(--high-grey-400));
+  --icon-color-actived: var(--high-primary);
+
+  display: inline-flex;
+  align-items: center;
+  // font-size: 12px;
+  // color: @default-color;
+  cursor: pointer;
+
+  &-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &-text {
+    margin-right: 2px;
+  }
+
+  &-icon {
+    display: flex;
+    flex-direction: column;
+    color: var(--icon-color);
+    font-size: 10px;
+  }
+
+  &-iconDown {
+    margin-top: -0.3em;
+  }
+
+  &-icon-actived {
+    color: var(--icon-color-actived);
+  }
+}
