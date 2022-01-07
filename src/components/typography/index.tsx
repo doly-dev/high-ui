@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../style/index.less';
+import '../../style/index.less';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface TypographyProps {

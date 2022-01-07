@@ -1,6 +1,6 @@
 # 颜色
 
-<code src='../../src/demos/colors.tsx' />
+<code src='../../src/style/demos/colors.tsx' />
 
 ## 参考
 

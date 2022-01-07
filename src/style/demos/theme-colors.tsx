@@ -17,17 +17,17 @@ const COLORS = THEME_COLORS.map((item) => {
     [
       {
         name: mainName,
-        color: `var(${mainName})`,
+        color: `var(${mainName})`
       },
       {
         name: lightName,
-        color: `var(${lightName})`,
+        color: `var(${lightName})`
       },
       {
         name: darkName,
-        color: `var(${darkName})`,
-      },
-    ],
+        color: `var(${darkName})`
+      }
+    ]
   ] as const;
 });
 

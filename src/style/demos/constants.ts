@@ -19,7 +19,7 @@ export const PALETTE_COLORS = [
   'deeporange',
   'brown',
   'grey',
-  'bluegrey',
+  'bluegrey'
 ];
 
 export const PALETTE_SHADE = [
@@ -36,25 +36,18 @@ export const PALETTE_SHADE = [
   'A100',
   'A200',
   'A400',
-  'A700',
+  'A700'
 ];
 
 export enum ColorType {
   HEX = 'hex',
   RGB = 'rgb',
-  HSL = 'hsl',
+  HSL = 'hsl'
 }
 
 export enum ContrastMode {
   Material = 'material',
-  Standard = 'standard',
+  Standard = 'standard'
 }
 
-export const THEME_COLORS = [
-  'primary',
-  'secondary',
-  'error',
-  'warning',
-  'info',
-  'success',
-];
+export const THEME_COLORS = ['primary', 'secondary', 'error', 'warning', 'info', 'success'];

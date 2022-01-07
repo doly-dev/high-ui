@@ -27,33 +27,27 @@ const PaletteCard: React.FC<PaletteCardProps> = ({
   showColor = true,
   showContrast = true,
   showName = true,
-  copyField = 'color',
+  copyField = 'color'
 }) => {
   const divRef = React.useRef<HTMLDivElement>(null);
   const [contrast, setContrast] = React.useState<number>();
-  const [colorObj, setColorObj] =
-    React.useState<{ rgb: string; hex: string; hsl: string }>();
+  const [colorObj, setColorObj] = React.useState<{ rgb: string; hex: string; hsl: string }>();
 
-  const wcagLevel = React.useMemo(
-    () => (contrast ? getWcagRule(contrast)?.text : ''),
-    [contrast],
-  );
+  const wcagLevel = React.useMemo(() => (contrast ? getWcagRule(contrast)?.text : ''), [contrast]);
 
   React.useEffect(() => {
     if (divRef.current) {
-      const bgColorValue = window.getComputedStyle(
-        divRef.current,
-      ).backgroundColor;
+      const bgColorValue = window.getComputedStyle(divRef.current).backgroundColor;
       const bgColorObj = Color(bgColorValue);
 
       setColorObj({
         rgb: bgColorObj.rgb().toString(),
         hex: bgColorObj.hex().toString().toLowerCase(),
-        hsl: formatHSL(bgColorObj.hsl().array()),
+        hsl: formatHSL(bgColorObj.hsl().array())
       });
 
       const { contrast: contrastValue } = getContrastAndColor(bgColorValue, {
-        mode,
+        mode
       });
       setContrast(numberToFixed(contrastValue));
     }
@@ -69,7 +63,7 @@ const PaletteCard: React.FC<PaletteCardProps> = ({
         message.success(
           <>
             复制成功！<Typography.Text code>{copyText}</Typography.Text>
-          </>,
+          </>
         );
       }}
     >

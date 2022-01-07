@@ -14,15 +14,7 @@ interface BoxWithColorProps<E extends HTMLElement = HTMLDivElement>
 }
 
 const BoxWithColor = React.forwardRef<HTMLElement, BoxWithColorProps>(
-  (
-    {
-      as = 'div',
-      position = 'fore',
-      mode = ContrastMode.Material,
-      ...restProps
-    },
-    ref,
-  ) => {
+  ({ as = 'div', position = 'fore', mode = ContrastMode.Material, ...restProps }, ref) => {
     const [color, setColor] = React.useState('');
     const divRef = React.useRef(null);
     const handleRef = React.useCallback(
@@ -37,36 +29,34 @@ const BoxWithColor = React.forwardRef<HTMLElement, BoxWithColorProps>(
           }
         }
       },
-      [ref],
+      [ref]
     );
 
     const { currentStyleProp, calcStyleProp } = React.useMemo(() => {
       if (position === 'fore') {
         return {
           currentStyleProp: 'backgroundColor',
-          calcStyleProp: 'color',
+          calcStyleProp: 'color'
         } as const;
       }
       return {
         currentStyleProp: 'color',
-        calcStyleProp: 'backgroundColor',
+        calcStyleProp: 'backgroundColor'
       } as const;
     }, [position]);
 
     const calcStyle = React.useMemo(
       () => ({
-        [calcStyleProp]: color,
+        [calcStyleProp]: color
       }),
-      [calcStyleProp, color],
+      [calcStyleProp, color]
     );
 
     React.useEffect(() => {
       if (divRef.current) {
-        const currentColor = window.getComputedStyle(divRef.current)[
-          currentStyleProp
-        ];
+        const currentColor = window.getComputedStyle(divRef.current)[currentStyleProp];
         const { color: colorValue } = getContrastAndColor(currentColor, {
-          mode,
+          mode
         });
         setColor(colorValue);
       }
@@ -77,10 +67,10 @@ const BoxWithColor = React.forwardRef<HTMLElement, BoxWithColorProps>(
       ref: handleRef,
       style: {
         ...restProps.style,
-        ...calcStyle,
-      },
+        ...calcStyle
+      }
     });
-  },
+  }
 );
 
 export default BoxWithColor;

@@ -5,17 +5,14 @@ const MajorVersionNumber = Number(pkg.version.split('.')[0]);
 const versionSiteRoot = `refs/heads/v${MajorVersionNumber}`;
 
 const preMajorVersionNumber = MajorVersionNumber - 1;
-// const preVersionSiteRoot = `refs/heads/v${preMajorVersionNumber}`;
+const preVersionSiteRoot = `refs/heads/v${preMajorVersionNumber}`;
 
 const version = process.env.BUIDL_DOC_VERSION ? versionSiteRoot : 'latest';
 
 const serverRootDirect =
-  process.env.NODE_ENV === 'production'
-    ? 'https://doly-dev.github.io/high-ui/'
-    : '/';
+  process.env.NODE_ENV === 'production' ? 'https://doly-dev.github.io/high-ui/' : '/';
 const logo = 'https://www.caijinfeng.com/assets/images/logo-doly@3x.png';
-const favicon =
-  'https://www.caijinfeng.com/assets/images/doly-touch-icon_48x48.png';
+const favicon = 'https://www.caijinfeng.com/assets/images/doly-touch-icon_48x48.png';
 
 const publicPath = serverRootDirect + version + '/';
 
@@ -25,15 +22,15 @@ if (process.env.NODE_ENV === 'production') {
   prodConfig.headScripts = [
     {
       src: 'https://www.googletagmanager.com/gtag/js?id=G-R1F3Q898DB',
-      async: true,
+      async: true
     },
     {
       content: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-R1F3Q898DB');
-    `,
-    },
+    `
+    }
   ];
   prodConfig.chunks = ['vendors', 'umi'];
   prodConfig.chainWebpack = function (config, { webpack }) {
@@ -47,11 +44,11 @@ gtag('config', 'G-R1F3Q898DB');
               chunks: 'all',
               name: 'vendors',
               priority: -10,
-              enforce: true,
-            },
-          },
-        },
-      },
+              enforce: true
+            }
+          }
+        }
+      }
     });
   };
 }
@@ -64,13 +61,17 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   history: {
-    type: 'hash',
+    type: 'hash'
   },
   hash: true,
   navs: [
     {
       title: '指南',
-      path: '/guide',
+      path: '/guide'
+    },
+    {
+      title: '组件',
+      path: '/components'
     },
     // {
     //   title: `v${preMajorVersionNumber}.x`,
@@ -78,12 +79,12 @@ export default defineConfig({
     // },
     {
       title: 'GitHub',
-      path: 'https://github.com/doly-dev/high-ui',
+      path: 'https://github.com/doly-dev/high-ui'
     },
     {
       title: '更新日志',
-      path: 'https://github.com/doly-dev/high-ui/releases',
-    },
+      path: 'https://github.com/doly-dev/high-ui/releases'
+    }
   ],
   extraBabelPlugins: [
     [
@@ -91,10 +92,10 @@ export default defineConfig({
       {
         libraryName: 'antd',
         libraryDirectory: 'es',
-        style: true,
-      },
-    ],
+        style: true
+      }
+    ]
   ],
-  ...prodConfig,
+  ...prodConfig
   // more config: https://d.umijs.org/config
 });

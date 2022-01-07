@@ -28,7 +28,7 @@ const Palette: React.FC<PaletteProps> = ({
   contrastMode = ContrastMode.Material,
   copyField = 'color',
   className,
-  style,
+  style
 }) => {
   return (
     <div className={classnames(styles.palette, className)} style={style}>

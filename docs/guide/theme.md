@@ -2,7 +2,7 @@
 
 ## 颜色
 
-<code src='../../src/demos/theme-colors.tsx' />
+<code src='../../src/style/demos/theme-colors.tsx' />
 
 ## 字体
 

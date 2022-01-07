@@ -11,31 +11,31 @@ import styles from './colors.less';
 const ColorTypeOptions = [
   {
     value: ColorType.HEX,
-    label: ColorType.HEX.toUpperCase(),
+    label: ColorType.HEX.toUpperCase()
   },
   {
     value: ColorType.RGB,
-    label: ColorType.RGB.toUpperCase(),
+    label: ColorType.RGB.toUpperCase()
   },
   {
     value: ColorType.HSL,
-    label: ColorType.HSL.toUpperCase(),
-  },
+    label: ColorType.HSL.toUpperCase()
+  }
 ];
 
 const VisibleOptions = [
   {
     value: 'name',
-    label: 'CSS 变量名',
+    label: 'CSS 变量名'
   },
   {
     value: 'contrast',
-    label: '对比度',
+    label: '对比度'
   },
   {
     value: 'color',
-    label: '颜色',
-  },
+    label: '颜色'
+  }
 ];
 
 const DefaultVisible = VisibleOptions.map((item) => item.value);
@@ -44,23 +44,23 @@ type CopyFieldType = 'name' | 'color';
 const CopyFieldOptions = [
   {
     value: 'name',
-    label: 'CSS 变量名',
+    label: 'CSS 变量名'
   },
   {
     value: 'color',
-    label: '颜色',
-  },
+    label: '颜色'
+  }
 ];
 
 const ContrastModeOptions = [
   {
     value: ContrastMode.Material,
-    label: 'Material Design',
+    label: 'Material Design'
   },
   {
     value: ContrastMode.Standard,
-    label: 'Standard',
-  },
+    label: 'Standard'
+  }
 ];
 
 const COLORS = PALETTE_COLORS.map((colorItem) =>
@@ -68,17 +68,14 @@ const COLORS = PALETTE_COLORS.map((colorItem) =>
     const colorVarName = `${CSS_VAR_PREFIX}-${colorItem}-${shadeItem}`;
     return {
       name: `--${colorVarName}`,
-      color: `rgb(var(--${colorVarName}))`,
+      color: `rgb(var(--${colorVarName}))`
     };
-  }),
+  })
 );
 
 const Colors = () => {
-  const [visible, setVisible] =
-    React.useState<(string | number | boolean)[]>(DefaultVisible);
-  const [contrastMode, setContrastMode] = React.useState(
-    ContrastModeOptions[0].value,
-  );
+  const [visible, setVisible] = React.useState<(string | number | boolean)[]>(DefaultVisible);
+  const [contrastMode, setContrastMode] = React.useState(ContrastModeOptions[0].value);
   const [colorType, setColorType] = React.useState(ColorTypeOptions[0].value);
   const [copyField, setCopyField] = React.useState<CopyFieldType>('color');
 
@@ -86,11 +83,7 @@ const Colors = () => {
     <div>
       <div className={styles.formItem}>
         显示：
-        <Checkbox.Group
-          options={VisibleOptions}
-          value={visible}
-          onChange={setVisible}
-        />
+        <Checkbox.Group options={VisibleOptions} value={visible} onChange={setVisible} />
       </div>
       <div className={styles.formItem}>
         文本颜色对比度计算：

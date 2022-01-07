@@ -26,12 +26,8 @@ type GetContrastAndColorOptions = {
   mode?: ContrastMode;
 };
 
-export const getContrastAndColor = (
-  color = 'white',
-  options: GetContrastAndColorOptions = {},
-) => {
-  const { contrast = CONTRAST_THRESHOLD, mode = ContrastMode.Material } =
-    options;
+export const getContrastAndColor = (color = 'white', options: GetContrastAndColorOptions = {}) => {
+  const { contrast = CONTRAST_THRESHOLD, mode = ContrastMode.Material } = options;
   const colorObj = Color(color);
   const WhiteContrast = colorObj.contrast(Color(COLOR_WHITE));
   const BlackContrast = colorObj.contrast(Color(COLOR_BLACK));
@@ -41,12 +37,12 @@ export const getContrastAndColor = (
     if (WhiteContrast >= contrast || WhiteContrast >= BlackContrast) {
       return {
         color: COLOR_WHITE,
-        contrast: WhiteContrast,
+        contrast: WhiteContrast
       };
     }
     return {
       color: COLOR_BLACK,
-      contrast: BlackContrast,
+      contrast: BlackContrast
     };
   }
 
@@ -54,7 +50,7 @@ export const getContrastAndColor = (
   const isLight = WhiteContrast >= BlackContrast;
   return {
     color: isLight ? COLOR_WHITE : COLOR_BLACK,
-    contrast: isLight ? WhiteContrast : BlackContrast,
+    contrast: isLight ? WhiteContrast : BlackContrast
   };
 
   // 2.常规方案
