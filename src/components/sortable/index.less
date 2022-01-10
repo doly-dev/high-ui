@@ -5,12 +5,13 @@
 
 :root {
   @{css-var-prefix-sortable}-color: currentColor;
-  @{css-var-prefix-sortable}-actived-color: var(~'@{css-var-prefix-theme}-primary');
+  @{css-var-prefix-sortable}-color-active: var(~'@{css-var-prefix-theme}-primary');
   @{css-var-prefix-sortable}-font-size: 1em;
-  @{css-var-prefix-sortable}-disabled-opacity: 0.5;
+  @{css-var-prefix-sortable}-opacity-disabled: 0.5;
   @{css-var-prefix-sortable}-icon-font-size: 0.7em;
   @{css-var-prefix-sortable}-icon-color: rgb(var(~'@{css-var-prefix-theme}-grey-400'));
-  @{css-var-prefix-sortable}-actived-icon-color: var(~'@{css-var-prefix-theme}-primary');
+  @{css-var-prefix-sortable}-icon-color-active: var(~'@{css-var-prefix-theme}-primary');
+  @{css-var-prefix-sortable}-space: 2px;
 }
 
 .@{class-prefix-sortable} {
@@ -20,17 +21,17 @@
   font-size: var(~'@{css-var-prefix-sortable}-font-size');
   cursor: pointer;
 
-  &-actived {
-    color: var(~'@{css-var-prefix-sortable}-actived-color');
+  &-active {
+    color: var(~'@{css-var-prefix-sortable}-color-active');
   }
 
   &-disabled {
     cursor: not-allowed;
-    opacity: var(~'@{css-var-prefix-sortable}-disabled-opacity');
+    opacity: var(~'@{css-var-prefix-sortable}-opacity-disabled');
   }
 
   &-text {
-    margin-right: 2px;
+    margin-right: var(~'@{css-var-prefix-sortable}-space');
   }
 
   &-icon {
@@ -44,7 +45,7 @@
     margin-top: -0.3em;
   }
 
-  &-icon-actived {
-    color: var(~'@{css-var-prefix-sortable}-actived-icon-color');
+  &-icon-active {
+    color: var(~'@{css-var-prefix-sortable}-icon-color-active');
   }
 }

@@ -50,7 +50,7 @@ const Sortable = React.forwardRef<HTMLSpanElement, SortableProps>((props, ref) =
         classPrefix,
         {
           [`${classPrefix}-disabled`]: disabled,
-          [`${classPrefix}-actived`]: !!state
+          [`${classPrefix}-active`]: !!state
         },
         className
       )}
@@ -62,12 +62,12 @@ const Sortable = React.forwardRef<HTMLSpanElement, SortableProps>((props, ref) =
       <span className={`${classPrefix}-icon`}>
         <CaretUpFill
           className={classnames(`${classPrefix}-iconUp`, {
-            [`${classPrefix}-icon-actived`]: state === SortableTypeEnum.ASC
+            [`${classPrefix}-icon-active`]: state === SortableTypeEnum.ASC
           })}
         />
         <CaretDownFill
           className={classnames(`${classPrefix}-iconDown`, {
-            [`${classPrefix}-icon-actived`]: state === SortableTypeEnum.DESC
+            [`${classPrefix}-icon-active`]: state === SortableTypeEnum.DESC
           })}
         />
       </span>

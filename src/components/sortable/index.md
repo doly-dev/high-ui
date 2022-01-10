@@ -58,12 +58,13 @@ export interface SortableProps {
 
 ### CSS 变量
 
-| 变量名                             | 说明             | 默认值                            |
-| ---------------------------------- | ---------------- | --------------------------------- |
-| --high-sortable-color              | 默认文本颜色     | `currentColor`                    |
-| --high-sortable-actived-color      | 激活时的文本颜色 | `--high-theme-primary`            |
-| --high-sortable-font-size          | 文本大小         | `1em`                             |
-| --high-sortable-disabled-opacity   | 禁用时透明度     | `0.5`                             |
-| --high-sortable-icon-font-size     | 图标大小         | `0.7em`                           |
-| --high-sortable-icon-color         | 默认图标颜色     | `rgb(var(--high-theme-grey-400))` |
-| --high-sortable-actived-icon-color | 激活时的图标颜色 | `--high-theme-primary`            |
+| 变量名                            | 说明             | 默认值                            |
+| --------------------------------- | ---------------- | --------------------------------- |
+| --high-sortable-color             | 默认文本颜色     | `currentColor`                    |
+| --high-sortable-color-active      | 激活时的文本颜色 | `--high-theme-primary`            |
+| --high-sortable-font-size         | 文本大小         | `1em`                             |
+| --high-sortable-opacity-disabled  | 禁用时透明度     | `0.5`                             |
+| --high-sortable-icon-font-size    | 图标大小         | `0.7em`                           |
+| --high-sortable-icon-color        | 默认图标颜色     | `rgb(var(--high-theme-grey-400))` |
+| --high-sortable-icon-color-active | 激活时的图标颜色 | `--high-theme-primary`            |
+| --high-sortable--space            | 文字和图标间距   | `2px`                             |
