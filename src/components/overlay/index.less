@@ -1,6 +1,11 @@
 @import '../../style/config.less';
 
-@class-prefix-overlay: ~'@{high-prefix}-overlay';
+@class-prefix-overlay: ~'@{class-prefix}-overlay';
+@css-var-prefix-overlay: ~'@{css-var-prefix}-overlay';
+
+:root {
+  @{css-var-prefix-overlay}-opacity: 0.4;
+}
 
 .@{class-prefix-overlay} {
   position: fixed;
@@ -9,5 +14,5 @@
   bottom: 0;
   left: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, var(~'@{css-var-prefix-overlay}-opacity'));
 }

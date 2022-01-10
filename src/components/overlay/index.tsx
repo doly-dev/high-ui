@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classnames from 'classnames';
-import { ConfigContext } from '../config-provider';
+import getClassPrefix from '../../utils/getClassPrefix';
 import renderToContainer from '../../utils/renderToContainer';
 import { ContainerType } from '../../utils/getContainer';
 import { Fade } from '../transition';
 import './index.less';
+
+const classPrefix = getClassPrefix('overlay');
 
 export interface OverlayProps extends React.HTMLAttributes<HTMLDivElement> {
   container?: ContainerType;
@@ -21,9 +23,6 @@ const Overlay: React.FC<OverlayProps> = ({
   unmountOnExit = true,
   ...restProps
 }) => {
-  const { getClassPrefix } = useContext(ConfigContext);
-  const classPrefix = getClassPrefix?.('overlay');
-
   const overlayView = (
     <Fade in={visible} mountOnEnter={mountOnEnter} unmountOnExit={unmountOnExit}>
       <div

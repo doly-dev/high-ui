@@ -2,8 +2,10 @@ import * as React from 'react';
 import { CaretUpFill, CaretDownFill } from 'doly-icons';
 import { useControllableValue } from 'rc-hooks';
 import classnames from 'classnames';
-import { ConfigContext } from '../config-provider';
+import getClassPrefix from '../../utils/getClassPrefix';
 import './index.less';
+
+const classPrefix = getClassPrefix('sortable');
 
 export enum SortableTypeEnum {
   ASC = 'asc',
@@ -23,9 +25,6 @@ export interface SortableProps {
 }
 
 const Sortable = React.forwardRef<HTMLSpanElement, SortableProps>((props, ref) => {
-  const { getClassPrefix } = React.useContext(ConfigContext);
-  const classPrefix = getClassPrefix?.('sortable');
-
   const { text, disabled, className, style } = props;
   const [state, setState] = useControllableValue<SortableType>(props);
 

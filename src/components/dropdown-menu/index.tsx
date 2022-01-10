@@ -2,12 +2,14 @@ import * as React from 'react';
 import { ChevronDown, Check2 } from 'doly-icons';
 import { useClickAway, useControllableValue } from 'rc-hooks';
 import classnames from 'classnames';
-import { omit } from 'lodash';
-import { ConfigContext } from '../config-provider';
+import getClassPrefix from '../../utils/getClassPrefix';
+import omit from '../../utils/omit';
 import Overlay from '../overlay';
 import { Collapse } from '../transition';
 
 import './index.less';
+
+const classPrefix = getClassPrefix('dropdown-menu');
 
 type DataItem = {
   name: string;
@@ -40,9 +42,6 @@ export interface DropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> 
 const DropdownMenu: React.FC<DropdownMenuProps> & {
   Item: typeof DropdownMenuItem;
 } = (props) => {
-  const { getClassPrefix } = React.useContext(ConfigContext);
-  const classPrefix = getClassPrefix?.('dropdown-menu');
-
   const {
     overlay = true,
     container = document.body,
