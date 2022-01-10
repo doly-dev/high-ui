@@ -73,4 +73,6 @@ const BoxWithColor = React.forwardRef<HTMLElement, BoxWithColorProps>(
   }
 );
 
+BoxWithColor.displayName = 'BoxWithColor';
+
 export default BoxWithColor;

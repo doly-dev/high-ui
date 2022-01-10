@@ -5,10 +5,11 @@ import * as React from 'react';
 import classnames from 'classnames';
 import BoxWithColor from './Palette/BoxWithColor';
 import { THEME_COLORS, CSS_VAR_PREFIX } from './constants';
+import 'high-ui/es/style';
 import styles from './theme-colors.less';
 
 const COLORS = THEME_COLORS.map((item) => {
-  const mainName = `--${CSS_VAR_PREFIX}-${item}`;
+  const mainName = `${CSS_VAR_PREFIX}-${item}`;
   const lightName = `${mainName}-light`;
   const darkName = `${mainName}-dark`;
 
@@ -16,12 +17,12 @@ const COLORS = THEME_COLORS.map((item) => {
     item,
     [
       {
-        name: mainName,
-        color: `var(${mainName})`
-      },
-      {
         name: lightName,
         color: `var(${lightName})`
+      },
+      {
+        name: mainName,
+        color: `var(${mainName})`
       },
       {
         name: darkName,

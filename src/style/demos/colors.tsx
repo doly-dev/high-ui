@@ -67,8 +67,8 @@ const COLORS = PALETTE_COLORS.map((colorItem) =>
   PALETTE_SHADE.map((shadeItem) => {
     const colorVarName = `${CSS_VAR_PREFIX}-${colorItem}-${shadeItem}`;
     return {
-      name: `--${colorVarName}`,
-      color: `rgb(var(--${colorVarName}))`
+      name: `${colorVarName}`,
+      color: `rgb(var(${colorVarName}))`
     };
   })
 );

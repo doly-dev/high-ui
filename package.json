@@ -45,7 +45,7 @@
   "dependencies": {
     "@babel/runtime": "^7.16.3",
     "classnames": "^2.3.1",
-    "doly-icons": "^1.0.2",
+    "doly-icons": "^1.1.1",
     "rc-hooks": "^1.8.2",
     "react-transition-group": "^4.4.2"
   },

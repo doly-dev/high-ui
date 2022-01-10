@@ -2,9 +2,9 @@
 
 // 不同主题切换
 body {
-  color: rgba(var(--high-black), 0.87);
+  color: rgba(var(~'@{css-var-prefix-theme}-black'), 0.87);
 }
 
 body.dark {
-  color: rgb(var(--high-white));
+  color: rgb(var(~'@{css-var-prefix-theme}-white'));
 }

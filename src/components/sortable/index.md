@@ -58,12 +58,12 @@ export interface SortableProps {
 
 ### CSS 变量
 
-| 参数                 | 说明             | 默认值                      |
-| -------------------- | ---------------- | --------------------------- |
-| --icon-font-size     | 图标大小         | `10px`                      |
-| --icon-color         | 默认图标颜色     | `rgb(var(--high-grey-400))` |
-| --icon-color-actived | 激活时的图标颜色 | `--high-primary`            |
-| --color              | 默认文本颜色     | `rgb(var(--high-grey-700))` |
-| --color-actived      | 激活时的文本颜色 | `--high-primary`            |
-| --font-size          | 文本大小         | `14px`                      |
-| --opacity-disabled   | 禁用时透明度     | `0.5`                       |
+| 变量名                             | 说明             | 默认值                            |
+| ---------------------------------- | ---------------- | --------------------------------- |
+| --high-sortable-color              | 默认文本颜色     | `rgb(var(--high-theme-grey-700))` |
+| --high-sortable-actived-color      | 激活时的文本颜色 | `--high-theme-primary`            |
+| --high-sortable-font-size          | 文本大小         | `14px`                            |
+| --high-sortable-disabled-opacity   | 禁用时透明度     | `0.5`                             |
+| --high-sortable-icon-font-size     | 图标大小         | `10px`                            |
+| --high-sortable-icon-color         | 默认图标颜色     | `rgb(var(--high-theme-grey-400))` |
+| --high-sortable-actived-icon-color | 激活时的图标颜色 | `--high-theme-primary`            |

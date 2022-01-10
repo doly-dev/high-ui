@@ -5,6 +5,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 import Panel from './Panel';
 import { ColorType, ContrastMode } from '../constants';
+import 'high-ui/es/style';
 import styles from './index.less';
 
 interface PaletteProps {

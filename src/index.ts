@@ -10,3 +10,6 @@ export { default as Sortable } from './components/sortable';
 export * from './components/sortable';
 
 export * from './components/transition';
+
+export { default as DropdownMenu } from './components/dropdown-menu';
+export * from './components/dropdown-menu';

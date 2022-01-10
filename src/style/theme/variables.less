@@ -3,62 +3,62 @@
 :root {
   // 字体
   // ref: https://www.tailwindcss.cn/docs/font-family
-  --high-font-sans: ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
-    'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
-  --high-font-serif: ui-serif, georgia, cambria, 'Times New Roman', times, serif;
-  --high-font-mono: ui-monospace, sfmono-regular, menlo, monaco, consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  @{css-var-prefix-theme}-font-sans: ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont,
+    'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  @{css-var-prefix-theme}-font-serif: ui-serif, georgia, cambria, 'Times New Roman', times, serif;
+  @{css-var-prefix-theme}-font-mono: ui-monospace, sfmono-regular, menlo, monaco, consolas,
+    'Liberation Mono', 'Courier New', monospace;
 
   // 主色调
-  --high-primary: rgb(var(--high-blue-700));
-  --high-primary-light: rgb(var(--high-blue-400));
-  --high-primary-dark: rgb(var(--high-blue-800));
+  @{css-var-prefix-theme}-primary: rgb(var(~'@{css-var-prefix-theme}-blue-700'));
+  @{css-var-prefix-theme}-primary-light: rgb(var(~'@{css-var-prefix-theme}-blue-400'));
+  @{css-var-prefix-theme}-primary-dark: rgb(var(~'@{css-var-prefix-theme}-blue-800'));
 
   // 次要色
-  --high-secondary: rgb(var(--high-purple-500));
-  --high-secondary-light: rgb(var(--high-purple-300));
-  --high-secondary-dark: rgb(var(--high-purple-700));
+  @{css-var-prefix-theme}-secondary: rgb(var(~'@{css-var-prefix-theme}-purple-500'));
+  @{css-var-prefix-theme}-secondary-light: rgb(var(~'@{css-var-prefix-theme}-purple-300'));
+  @{css-var-prefix-theme}-secondary-dark: rgb(var(~'@{css-var-prefix-theme}-purple-700'));
 
   // 错误色
-  --high-error: rgb(var(--high-red-700));
-  --high-error-light: rgb(var(--high-red-400));
-  --high-error-dark: rgb(var(--high-red-800));
+  @{css-var-prefix-theme}-error: rgb(var(~'@{css-var-prefix-theme}-red-700'));
+  @{css-var-prefix-theme}-error-light: rgb(var(~'@{css-var-prefix-theme}-red-400'));
+  @{css-var-prefix-theme}-error-dark: rgb(var(~'@{css-var-prefix-theme}-red-800'));
 
   // 警告色
-  --high-warning: rgb(var(--high-orange-800));
-  --high-warning-light: rgb(var(--high-orange-500));
-  --high-warning-dark: rgb(var(--high-orange-900));
+  @{css-var-prefix-theme}-warning: rgb(var(~'@{css-var-prefix-theme}-orange-800'));
+  @{css-var-prefix-theme}-warning-light: rgb(var(~'@{css-var-prefix-theme}-orange-500'));
+  @{css-var-prefix-theme}-warning-dark: rgb(var(~'@{css-var-prefix-theme}-orange-900'));
 
   // 信息色
-  --high-info: rgb(var(--high-lightblue-700));
-  --high-info-light: rgb(var(--high-lightblue-400));
-  --high-info-dark: rgb(var(--high-lightblue-900));
+  @{css-var-prefix-theme}-info: rgb(var(~'@{css-var-prefix-theme}-lightblue-700'));
+  @{css-var-prefix-theme}-info-light: rgb(var(~'@{css-var-prefix-theme}-lightblue-400'));
+  @{css-var-prefix-theme}-info-dark: rgb(var(~'@{css-var-prefix-theme}-lightblue-900'));
 
   // 成功色
-  --high-success: rgb(var(--high-green-800));
-  --high-success-light: rgb(var(--high-green-500));
-  --high-success-dark: rgb(var(--high-green-900));
+  @{css-var-prefix-theme}-success: rgb(var(~'@{css-var-prefix-theme}-green-800'));
+  @{css-var-prefix-theme}-success-light: rgb(var(~'@{css-var-prefix-theme}-green-500'));
+  @{css-var-prefix-theme}-success-dark: rgb(var(~'@{css-var-prefix-theme}-green-900'));
 
   // 断点
-  --high-screen-xs: 0;
-  --high-screen-sm: 576px;
-  --high-screen-md: 768px;
-  --high-screen-lg: 992px;
-  --high-screen-xl: 1200px;
-  --high-screen-xxl: 1600px;
+  @{css-var-prefix-theme}-screen-xs: 0;
+  @{css-var-prefix-theme}-screen-sm: 576px;
+  @{css-var-prefix-theme}-screen-md: 768px;
+  @{css-var-prefix-theme}-screen-lg: 992px;
+  @{css-var-prefix-theme}-screen-xl: 1200px;
+  @{css-var-prefix-theme}-screen-xxl: 1600px;
 
   // 排版方向
-  --high-direction: ltr;
+  @{css-var-prefix-theme}-direction: ltr;
 
   // 层级
-  --high-zIndex-mobilestepper: 1000;
-  --high-zIndex-speeddial: 1050;
-  --high-zIndex-appbar: 1100;
-  --high-zIndex-drawer: 1200;
-  --high-zIndex-modal: 1300;
-  --high-zIndex-snackbar: 1400;
-  --high-zIndex-tooltip: 1500;
+  @{css-var-prefix-theme}-zIndex-mobilestepper: 1000;
+  @{css-var-prefix-theme}-zIndex-speeddial: 1050;
+  @{css-var-prefix-theme}-zIndex-appbar: 1100;
+  @{css-var-prefix-theme}-zIndex-drawer: 1200;
+  @{css-var-prefix-theme}-zIndex-modal: 1300;
+  @{css-var-prefix-theme}-zIndex-snackbar: 1400;
+  @{css-var-prefix-theme}-zIndex-tooltip: 1500;
 
   // 阴影
   // TODO: 阴影是否抽取变量
