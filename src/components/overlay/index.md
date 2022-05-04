@@ -36,6 +36,6 @@ interface OverlayProps extends React.HTMLAttributes<HTMLDivElement> {
 
 ### CSS 变量
 
-| 变量名               | 说明               | 默认值 |
-| -------------------- | ------------------ | ------ |
-| --high-overlay-alpha | 遮罩层背景色透明度 | `0.4`  |
+| 变量名  | 说明               | 默认值 |
+| ------- | ------------------ | ------ |
+| --alpha | 遮罩层背景色透明度 | `0.4`  |

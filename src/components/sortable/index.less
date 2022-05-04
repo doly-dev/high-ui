@@ -4,41 +4,41 @@
 @css-var-prefix-sortable: ~'@{css-var-prefix}-sortable';
 
 :root {
-  @{css-var-prefix-sortable}-color: currentColor;
-  @{css-var-prefix-sortable}-color-active: var(~'@{css-var-prefix-theme}-primary');
-  @{css-var-prefix-sortable}-font-size: 1em;
-  @{css-var-prefix-sortable}-opacity-disabled: 0.5;
-  @{css-var-prefix-sortable}-icon-font-size: 0.7em;
-  @{css-var-prefix-sortable}-icon-color: rgb(var(~'@{css-var-prefix-theme}-grey-400'));
-  @{css-var-prefix-sortable}-icon-color-active: var(~'@{css-var-prefix-theme}-primary');
-  @{css-var-prefix-sortable}-space: 2px;
+  --color: currentcolor;
+  --color-active: var(~'@{css-var-prefix}-color-primary');
+  --font-size: 1em;
+  --opacity-disabled: 0.5;
+  --icon-font-size: 0.7em;
+  --icon-color: rgb(var(~'@{css-var-prefix}-grey-400'));
+  --icon-color-active: var(~'@{css-var-prefix}-color-primary');
+  --space: 2px;
 }
 
 .@{class-prefix-sortable} {
   display: inline-flex;
   align-items: center;
-  color: var(~'@{css-var-prefix-sortable}-color');
-  font-size: var(~'@{css-var-prefix-sortable}-font-size');
+  color: var(~'--color');
+  font-size: var(~'--font-size');
   cursor: pointer;
 
   &-active {
-    color: var(~'@{css-var-prefix-sortable}-color-active');
+    color: var(~'--color-active');
   }
 
   &-disabled {
     cursor: not-allowed;
-    opacity: var(~'@{css-var-prefix-sortable}-opacity-disabled');
+    opacity: var(~'--opacity-disabled');
   }
 
   &-text {
-    margin-right: var(~'@{css-var-prefix-sortable}-space');
+    margin-right: var(~'--space');
   }
 
   &-icon {
     display: flex;
     flex-direction: column;
-    color: var(~'@{css-var-prefix-sortable}-icon-color');
-    font-size: var(~'@{css-var-prefix-sortable}-icon-font-size');
+    color: var(~'--icon-color');
+    font-size: var(~'--icon-font-size');
   }
 
   &-iconDown {
@@ -46,6 +46,6 @@
   }
 
   &-icon-active {
-    color: var(~'@{css-var-prefix-sortable}-icon-color-active');
+    color: var(~'--icon-color-active');
   }
 }

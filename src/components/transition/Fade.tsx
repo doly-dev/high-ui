@@ -30,7 +30,7 @@ const Fade: React.FC<FadeProps> = forwardRef(
     );
 
     const handleEnter = useCallback(
-      (isApearing) => {
+      (isApearing: boolean) => {
         if (nodeRef.current) {
           reflow(nodeRef.current);
         }
@@ -56,9 +56,8 @@ const Fade: React.FC<FadeProps> = forwardRef(
         onEnter={handleEnter}
         {...restProps}
       >
-        {(status: TransitionStatus, childProps: any) =>
+        {(status: TransitionStatus) =>
           cloneElement(children, {
-            ...childProps,
             style: {
               opacity: 0,
               visibility: status === EXITED && !inProp ? 'hidden' : undefined,
@@ -72,5 +71,7 @@ const Fade: React.FC<FadeProps> = forwardRef(
     );
   }
 );
+
+Fade.displayName = 'Fade';
 
 export default Fade;

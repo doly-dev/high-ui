@@ -57,7 +57,7 @@ const Slide: React.FC<SlideProps> = forwardRef(
     );
 
     const handleEnter = useCallback(
-      (isApearing) => {
+      (isApearing: boolean) => {
         if (nodeRef.current) {
           reflow(nodeRef.current);
         }
@@ -86,9 +86,8 @@ const Slide: React.FC<SlideProps> = forwardRef(
         onEnter={handleEnter}
         {...restProps}
       >
-        {(status: TransitionStatus, childProps: any) =>
+        {(status: TransitionStatus) =>
           cloneElement(children, {
-            ...childProps,
             style: {
               transform: getSlideTransform(direction),
               visibility: status === EXITED && !inProp ? 'hidden' : undefined,
@@ -102,5 +101,7 @@ const Slide: React.FC<SlideProps> = forwardRef(
     );
   }
 );
+
+Slide.displayName = 'Slide';
 
 export default Slide;

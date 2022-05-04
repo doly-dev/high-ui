@@ -1,6 +1,6 @@
 # 主题
 
-## 颜色
+## 色调
 
 <code src='../../src/style/demos/theme-colors.tsx' />
 

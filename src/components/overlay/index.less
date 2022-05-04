@@ -1,10 +1,9 @@
 @import '../../style/config.less';
 
 @class-prefix-overlay: ~'@{class-prefix}-overlay';
-@css-var-prefix-overlay: ~'@{css-var-prefix}-overlay';
 
 :root {
-  @{css-var-prefix-overlay}-alpha: 0.4;
+  --alpha: 0.4;
 }
 
 .@{class-prefix-overlay} {
@@ -14,5 +13,5 @@
   bottom: 0;
   left: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, var(~'@{css-var-prefix-overlay}-alpha'));
+  background: rgba(0, 0, 0, var('--alpha'));
 }

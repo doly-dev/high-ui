@@ -9,7 +9,7 @@ import 'high-ui/es/style';
 import styles from './theme-colors.less';
 
 const COLORS = THEME_COLORS.map((item) => {
-  const mainName = `${CSS_VAR_PREFIX}-${item}`;
+  const mainName = `${CSS_VAR_PREFIX}-color-${item}`;
   const lightName = `${mainName}-light`;
   const darkName = `${mainName}-dark`;
 
@@ -17,12 +17,12 @@ const COLORS = THEME_COLORS.map((item) => {
     item,
     [
       {
-        name: lightName,
-        color: `var(${lightName})`
-      },
-      {
         name: mainName,
         color: `var(${mainName})`
+      },
+      {
+        name: lightName,
+        color: `var(${lightName})`
       },
       {
         name: darkName,

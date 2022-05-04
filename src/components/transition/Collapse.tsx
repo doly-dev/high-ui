@@ -57,7 +57,7 @@ const Collapse: React.FC<CollapseProps> = forwardRef(
     }, [isHorizontal]);
 
     const handleEnter = useCallback(
-      (isApearing) => {
+      (isApearing: boolean) => {
         if (nodeRef.current) {
           nodeRef.current.style[size] = collapseSize;
           nodeRef.current.style.opacity = collapseOpacity;
@@ -70,7 +70,7 @@ const Collapse: React.FC<CollapseProps> = forwardRef(
     );
 
     const handleEntering = useCallback(
-      (isApearing) => {
+      (isApearing: boolean) => {
         if (nodeRef.current) {
           nodeRef.current.style.transition = createTransitions([size, 'opacity'], {
             duration: timeout as number
@@ -84,7 +84,7 @@ const Collapse: React.FC<CollapseProps> = forwardRef(
     );
 
     const handleEntered = useCallback(
-      (isApearing) => {
+      (isApearing: boolean) => {
         if (nodeRef.current) {
           nodeRef.current.style.transition = '';
           nodeRef.current.style[size] = '';
@@ -151,5 +151,7 @@ const Collapse: React.FC<CollapseProps> = forwardRef(
     );
   }
 );
+
+Collapse.displayName = 'Collapse';
 
 export default Collapse;

@@ -1,64 +1,64 @@
 @import './palette.less';
 
 :root {
-  // 字体
-  // ref: https://www.tailwindcss.cn/docs/font-family
-  @{css-var-prefix-theme}-font-sans: ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont,
-    'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  @{css-var-prefix-theme}-font-serif: ui-serif, georgia, cambria, 'Times New Roman', times, serif;
-  @{css-var-prefix-theme}-font-mono: ui-monospace, sfmono-regular, menlo, monaco, consolas,
-    'Liberation Mono', 'Courier New', monospace;
-
   // 主色调
-  @{css-var-prefix-theme}-primary: rgb(var(~'@{css-var-prefix-theme}-blue-700'));
-  @{css-var-prefix-theme}-primary-light: rgb(var(~'@{css-var-prefix-theme}-blue-400'));
-  @{css-var-prefix-theme}-primary-dark: rgb(var(~'@{css-var-prefix-theme}-blue-800'));
+  @{css-var-prefix}-color-primary: rgb(var(~'@{css-var-prefix}-blue-700'));
+  @{css-var-prefix}-color-primary-light: rgb(var(~'@{css-var-prefix}-blue-400'));
+  @{css-var-prefix}-color-primary-dark: rgb(var(~'@{css-var-prefix}-blue-800'));
 
   // 次要色
-  @{css-var-prefix-theme}-secondary: rgb(var(~'@{css-var-prefix-theme}-purple-500'));
-  @{css-var-prefix-theme}-secondary-light: rgb(var(~'@{css-var-prefix-theme}-purple-300'));
-  @{css-var-prefix-theme}-secondary-dark: rgb(var(~'@{css-var-prefix-theme}-purple-700'));
+  @{css-var-prefix}-color-secondary: rgb(var(~'@{css-var-prefix}-purple-500'));
+  @{css-var-prefix}-color-secondary-light: rgb(var(~'@{css-var-prefix}-purple-300'));
+  @{css-var-prefix}-color-secondary-dark: rgb(var(~'@{css-var-prefix}-purple-700'));
 
   // 错误色
-  @{css-var-prefix-theme}-error: rgb(var(~'@{css-var-prefix-theme}-red-700'));
-  @{css-var-prefix-theme}-error-light: rgb(var(~'@{css-var-prefix-theme}-red-400'));
-  @{css-var-prefix-theme}-error-dark: rgb(var(~'@{css-var-prefix-theme}-red-800'));
+  @{css-var-prefix}-color-error: rgb(var(~'@{css-var-prefix}-red-700'));
+  @{css-var-prefix}-color-error-light: rgb(var(~'@{css-var-prefix}-red-400'));
+  @{css-var-prefix}-color-error-dark: rgb(var(~'@{css-var-prefix}-red-800'));
 
   // 警告色
-  @{css-var-prefix-theme}-warning: rgb(var(~'@{css-var-prefix-theme}-orange-800'));
-  @{css-var-prefix-theme}-warning-light: rgb(var(~'@{css-var-prefix-theme}-orange-500'));
-  @{css-var-prefix-theme}-warning-dark: rgb(var(~'@{css-var-prefix-theme}-orange-900'));
+  @{css-var-prefix}-color-warning: rgb(var(~'@{css-var-prefix}-orange-800'));
+  @{css-var-prefix}-color-warning-light: rgb(var(~'@{css-var-prefix}-orange-500'));
+  @{css-var-prefix}-color-warning-dark: rgb(var(~'@{css-var-prefix}-orange-900'));
 
   // 信息色
-  @{css-var-prefix-theme}-info: rgb(var(~'@{css-var-prefix-theme}-lightblue-700'));
-  @{css-var-prefix-theme}-info-light: rgb(var(~'@{css-var-prefix-theme}-lightblue-400'));
-  @{css-var-prefix-theme}-info-dark: rgb(var(~'@{css-var-prefix-theme}-lightblue-900'));
+  @{css-var-prefix}-color-info: rgb(var(~'@{css-var-prefix}-lightblue-700'));
+  @{css-var-prefix}-color-info-light: rgb(var(~'@{css-var-prefix}-lightblue-400'));
+  @{css-var-prefix}-color-info-dark: rgb(var(~'@{css-var-prefix}-lightblue-900'));
 
   // 成功色
-  @{css-var-prefix-theme}-success: rgb(var(~'@{css-var-prefix-theme}-green-800'));
-  @{css-var-prefix-theme}-success-light: rgb(var(~'@{css-var-prefix-theme}-green-500'));
-  @{css-var-prefix-theme}-success-dark: rgb(var(~'@{css-var-prefix-theme}-green-900'));
+  @{css-var-prefix}-color-success: rgb(var(~'@{css-var-prefix}-green-800'));
+  @{css-var-prefix}-color-success-light: rgb(var(~'@{css-var-prefix}-green-500'));
+  @{css-var-prefix}-color-success-dark: rgb(var(~'@{css-var-prefix}-green-900'));
+
+  // 字体
+  // ref: https://www.tailwindcss.cn/docs/font-family
+  @{css-var-prefix}-font-sans: ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont,
+    'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  @{css-var-prefix}-font-serif: ui-serif, georgia, cambria, 'Times New Roman', times, serif;
+  @{css-var-prefix}-font-mono: ui-monospace, sfmono-regular, menlo, monaco, consolas,
+    'Liberation Mono', 'Courier New', monospace;
 
   // 断点
-  @{css-var-prefix-theme}-screen-xs: 0;
-  @{css-var-prefix-theme}-screen-sm: 576px;
-  @{css-var-prefix-theme}-screen-md: 768px;
-  @{css-var-prefix-theme}-screen-lg: 992px;
-  @{css-var-prefix-theme}-screen-xl: 1200px;
-  @{css-var-prefix-theme}-screen-xxl: 1600px;
+  @{css-var-prefix}-screen-xs: 0;
+  @{css-var-prefix}-screen-sm: 576px;
+  @{css-var-prefix}-screen-md: 768px;
+  @{css-var-prefix}-screen-lg: 992px;
+  @{css-var-prefix}-screen-xl: 1200px;
+  @{css-var-prefix}-screen-xxl: 1600px;
 
   // 排版方向
-  @{css-var-prefix-theme}-direction: ltr;
+  @{css-var-prefix}-direction: ltr;
 
   // 层级
-  @{css-var-prefix-theme}-zIndex-mobilestepper: 1000;
-  @{css-var-prefix-theme}-zIndex-speeddial: 1050;
-  @{css-var-prefix-theme}-zIndex-appbar: 1100;
-  @{css-var-prefix-theme}-zIndex-drawer: 1200;
-  @{css-var-prefix-theme}-zIndex-modal: 1300;
-  @{css-var-prefix-theme}-zIndex-snackbar: 1400;
-  @{css-var-prefix-theme}-zIndex-tooltip: 1500;
+  @{css-var-prefix}-zindex-mobilestepper: 1000;
+  @{css-var-prefix}-zindex-speeddial: 1050;
+  @{css-var-prefix}-zindex-appbar: 1100;
+  @{css-var-prefix}-zindex-drawer: 1200;
+  @{css-var-prefix}-zindex-modal: 1300;
+  @{css-var-prefix}-zindex-snackbar: 1400;
+  @{css-var-prefix}-zindex-tooltip: 1500;
 
   // 阴影
   // TODO: 阴影是否抽取变量

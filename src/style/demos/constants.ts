@@ -1,4 +1,4 @@
-export const CSS_VAR_PREFIX = '--high-theme';
+export const CSS_VAR_PREFIX = '--high';
 
 export const PALETTE_COLORS = [
   'red',
